@@ -1,0 +1,8 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="with=device-widtch,initial-scale=1" />
+    <title>Kleiton Barone</title>
+    {{ $bundleCss := resources.Get "css/bundle.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" type="text/css" href="{{ $bundleCss.RelPermalink }}"
+        integrity="{{ $bundleCss.Data.Integrity }}" />
+</head>

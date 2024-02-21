@@ -1,0 +1,12 @@
+{
+  "name": "personal-site-blog",
+  "version": "1.0.0",
+  "description": "used to show my projects and blog posts about dev tech",
+  "scripts": {
+    "sass:watch": "sass --watch assets/scss/main.scss assets/css/bundle.css"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.71.0"
+  }
+}
