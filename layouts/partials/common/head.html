@@ -2,7 +2,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="with=device-widtch,initial-scale=1" />
     <title>Kleiton Barone</title>
-    {{ $bundleCss := resources.Get "css/bundle.css" | resources.Minify | resources.Fingerprint }}
-    <link rel="stylesheet" type="text/css" href="{{ $bundleCss.RelPermalink }}"
-        integrity="{{ $bundleCss.Data.Integrity }}" />
+
+    {{ if .Site.IsServer }}
+    {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
+    {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+    {{
+    $bundleCss := resources.Get "css/styles.scss"
+    | toCSS
+    | resources.PostCSS (dict "config" "./assets/css/postcss.config.js")
+    | resources.ExecuteAsTemplate (printf "styles.dev.%s.css" $random) $random
+    }}
+    <link rel="stylesheet" type="text/css" href="{{ $bundleCss.RelPermalink }}" />
+    {{ else }}
+    {{ $bundleCss := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js")
+    | minify | fingerprint | resources.PostProcess }}
+    <link rel="stylesheet" href="{{ $bundleCss.RelPermalink }}" integrity="{{ $bundleCss.Data.Integrity }}" />
+    {{ end }}
 </head>
