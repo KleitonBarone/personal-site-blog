@@ -4,9 +4,13 @@ used to show my projects and blog posts about dev tech
 
 ## Running
 
-_Atention: you need hugo cli to run this project check it out here: [hugo website](https://gohugo.io/getting-started/quick-start/)_
+**Atention: you need [hugo](https://gohugo.io/getting-started/quick-start/) and [node](https://nodejs.org/en/download) to run this project**
 
-Clone the repository and run the following command inside the project folder:
+Clone the repository and run the following commands inside the project folder:
+
+```
+npm install
+```
 
 ```
 hugo server
