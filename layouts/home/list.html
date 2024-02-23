@@ -1,23 +1,52 @@
 {{ define "main"}}
-<div class="w-full bg-blue-950 text-gray-400">
+<div class="w-full bg-blue-950 text-gray-300">
     <!--Nav Bar-->
     <div class="flex justify-between py-3 px-6">
         <div class="w-1"></div>
         <ol class="flex justify-between list-none items-center">
             <li>
-                <a class="inline-block p-3">01. Sobre</a>
+                <a href="/#sobre" class="inline-block p-3 hover:text-cyan-400">
+                    <span class="text-cyan-400">01.</span> Sobre
+                </a>
             </li>
             <li>
-                <a class="inline-block p-3">02. Experiencia</a>
+                <a href="/#experiencia" class="inline-block p-3 hover:text-cyan-400">
+                    <span class="text-cyan-400">02.</span> Experiencia
+                </a>
             </li>
             <li>
-                <a class="inline-block p-3">03. Projetos</a>
+                <a href="/#projetos" class="inline-block p-3 hover:text-cyan-400">
+                    <span class="text-cyan-400">03.</span> Projetos
+                </a>
             </li>
             <li>
-                <a class="inline-block p-3">04. Contato</a>
+                <a href="/#contato" class="inline-block p-3 hover:text-cyan-400">
+                    <span class="text-cyan-400">04.</span> Contato
+                </a>
             </li>
         </ol>
     </div>
+    <!--Fim Nav Bar-->
+
+    <!--Info-->
+    <section class="flex-col items-start justify-center min-h-screen h-screen max-w-5xl">
+        <div>
+            Oi, meu nome é
+        </div>
+        <div>
+            Kleiton Barone
+        </div>
+        <div>
+            Desenvolvedor Backend
+        </div>
+        <div>
+            Eu sou um engenheiro de software especializado em construir aplicações e serviços.
+        </div>
+        <div>
+            Seta para baixo animada?
+        </div>
+    </section>
+    <!--Fim Info-->
 </div>
 
 {{ end }}
